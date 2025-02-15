@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+:root {
+    --color-red: #C30000;
+    --color-black: #292C33;
+    --color-gray: #6B7280;
+    --color-lightgray: #939CAE;
+    --color-lightestgray: #F2F2F2;
+    --color-white: #FFFFFF;
+    --color-white-2: #FAFAFA;   /*not used*/
+
+    --font-family: "Almarai", sans-serif;
+    --font-family-numbers: "Inter", sans-serif;
+
+    --font-size-s: 0.875rem;    /* 14px */
+    --font-size-m: 1rem;        /* 16px */
+    --font-size-l: 1.125;       /* 18px */
+
+    --space-4: 0.25rem;
+    --space-10: 0.625rem;
+    --space-12: 0.75rem;
+    --space-14: 0.875rem;
+    --space-16: 1rem;
+    --space-20: 1.25rem;
+    --space-30: 1.875rem;
+    --space-40: 2.5rem;
+    
+}
+
+html,
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    width: 100%;
+    font-family: var(--font-family);
+    font-weight: 300;
+    color: var(--color-gray);
+}
+
+body {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+main,
+footer {
+}
+
+main {
+    margin-left: var(--space-12);
+}
+
+a {
+    text-decoration-skip-ink: auto;
+    color: var(--color-black);
+}
+
+/* heading for work */
+h1 {
+    font-size: var(--font-size-l);
+}
+
+h2 {
+    font-size: var(--font-size-m);
+}
+
+p, ul, ol {
+    font-size: var(--font-size-m);
+}
