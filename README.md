@@ -14,7 +14,7 @@ https://shwong.world
 1. Clone/download the repo
 2. Open project in code editor of choice
 3. In the terminal of the source folder, run `npm install`, then `npm run dev`
-4. Open browser to "localhost:3000"
+4. Open browser to "localhost:4321"
 
 All commands are run from the root of the project, from a terminal:
 
