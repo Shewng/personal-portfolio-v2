@@ -1,11 +1,180 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <img src="profile100.png" alt="profile picture" />
+  <p>front-end enthusiast</p>
+  <p><s>gym rat</s> <span class="test">chronic bodybuilder</span></p>
+  <p>fashion admirer</p>
+  <p>truly alive when travelling</p>
+  <p>
+    fascinated by the transition from <span class="sunset"
+      >evening to night</span
+    >
+  </p>
+
+  <p class="currently">
+    currently ux/ui developing at <a href="/"
+      >porter airlines <span class="red">✦</span></a
+    >
+  </p>
+
+  <div class="links">
+    <a
+      href="mailto:samuelw098@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer">email <span class="red">✦</span></a
+    >
+    <a href="https://github.com/Shewng">github <span class="red">✦</span></a>
+    <a href="https://www.linkedin.com/in/shewng"
+      >linkedin <span class="red">✦</span></a
+    >
+    <a href="/resume.pdf">resume <span class="red">✦</span></a>
+  </div>
 </Layout>
+
+<style>
+  p,
+  a {
+    margin-bottom: var(--space-4);
+    width: fit-content;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  .test {
+    animation: 1s linear infinite flicker;
+    overflow: visible;
+    display: inline-block;
+    position: relative;
+    background: none;
+  }
+
+  .test::before {
+    animation: 1s linear infinite flicker-before;
+    clip-path: polygon(0px 0px, 100% 0px, 100% 33%, 0px 33%);
+    content: "chronic bodybuilder";
+    position: absolute;
+    background: none;
+    display: inline-block;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  .test::after {
+    animation: 1s linear infinite flicker-after;
+    clip-path: polygon(0px 67%, 100% 67%, 100% 100%, 0px 100%);
+    content: "chronic bodybuilder";
+    position: absolute;
+    background: none;
+    display: inline-block;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  @keyframes flicker {
+    2%,
+    60%,
+    63%,
+    78%,
+    81% {
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      transform: none;
+      opacity: 1;
+    }
+
+    62% {
+      -webkit-transform: translate(-2px, 0) skew(21deg);
+      -moz-transform: translate(-2px, 0) skew(21deg);
+      -ms-transform: translate(-2px, 0) skew(21deg);
+      transform: translate(-2px, 0) skew(21deg);
+    }
+    80% {
+      opacity: 0.4;
+      -webkit-transform: translate(2px, 0) skew(-15deg);
+      -moz-transform: translate(2px, 0) skew(-15deg);
+      -ms-transform: translate(2px, 0) skew(-15deg);
+      transform: translate(2px, 0) skew(-15deg);
+    }
+  }
+
+  @keyframes flicker-before {
+    2%,
+    64% {
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      transform: none;
+    }
+    4%,
+    60% {
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      transform: none;
+    }
+    62% {
+      -webkit-transform: translate(13px, -1px) skew(-13deg);
+      -moz-transform: translate(13px, -1px) skew(-13deg);
+      -ms-transform: translate(13px, -1px) skew(-13deg);
+      transform: translate(13px, -1px) skew(-13deg);
+    }
+  }
+
+  @keyframes flicker-after {
+    2%,
+    64% {
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      transform: none;
+    }
+    4%,
+    60% {
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      transform: none;
+    }
+    62% {
+      -webkit-transform: translate(-22px, 5px) skew(21deg);
+      -moz-transform: translate(-22px, 5px) skew(21deg);
+      -ms-transform: translate(-22px, 5px) skew(21deg);
+      transform: translate(-22px, 5px) skew(21deg);
+    }
+  } /*!sc*/
+
+  .currently {
+    margin: var(--space-30) 0px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sunset {
+    font-weight: 400;
+    padding-bottom: 1px;
+  }
+
+  .sunset:hover {
+    background-image: linear-gradient(to right, var(--gradient-sunset));
+    color: transparent;
+    background-clip: text;
+    font-style: italic;
+  }
+</style>
