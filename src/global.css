@@ -1,20 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 
 :root {
-    --color-red: #C30000;
-    --color-black: #292C33;
-    --color-gray: #6B7280;
-    --color-lightgray: #939CAE;
-    --color-lightestgray: #F2F2F2;
-    --color-white: #FFFFFF;
-    --color-white-2: #FAFAFA;   /*not used*/
+    --color-red: rgb(195, 0, 0);
+    --color-black: hsl(222, 11%, 18%);
+    --color-gray: hsl(220, 9%, 46%);
+    --color-lightgray: hsl(220, 6%, 54%);
+    --color-lightestgray: hsl(0, 0%, 90%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-white-2: hsl(0, 0%, 98%);   /*not used*/
+
+    --gradient-sunset: #f5633c,
+      #d63940,
+      #9c2a4b,
+      #5f1d53,
+      #341358,
+      #150e5c;
+    --gradient-earth: #00C925, #0015FF;
 
     --font-family: "Almarai", sans-serif;
     --font-family-numbers: "Inter", sans-serif;
 
     --font-size-s: 0.875rem;    /* 14px */
     --font-size-m: 1rem;        /* 16px */
-    --font-size-l: 1.125;       /* 18px */
+    --font-size-l: 1.125rem;       /* 18px */
 
     --space-4: 0.25rem;
     --space-10: 0.625rem;
@@ -46,23 +54,26 @@ body {
     flex-direction: column;
 }
 
-header,
-main,
-footer {
-}
-
 main {
     margin-left: var(--space-12);
 }
 
 a {
+    text-decoration: none;
     text-decoration-skip-ink: auto;
+    color: var(--color-black);
+}
+
+h1, h2 {
+    font-weight: 400;
+    line-height: 1.5;
     color: var(--color-black);
 }
 
 /* heading for work */
 h1 {
     font-size: var(--font-size-l);
+    margin-bottom: var(--space-12);
 }
 
 h2 {
@@ -71,4 +82,14 @@ h2 {
 
 p, ul, ol {
     font-size: var(--font-size-m);
+    line-height: 1.5;
+}
+
+.paragraph p {
+    line-height: 2;
+}
+
+.red {
+    color: var(--color-red);
+    font-size: 14px;
 }
