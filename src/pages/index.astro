@@ -8,15 +8,17 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <img src="profile100.png" alt="profile picture" />
-  <p>front-end enthusiast</p>
-  <p><s>gym rat</s> <span class="test">chronic bodybuilder</span></p>
-  <p>fashion admirer</p>
-  <p>truly alive when travelling</p>
-  <p>
-    fascinated by the transition from <span class="sunset"
-      >evening to night</span
-    >
-  </p>
+  <section>
+    <p>front-end enthusiast</p>
+    <p><s>gym rat</s> <span class="test">chronically lifting weights</span></p>
+    <p>fashion admirer</p>
+    <p>truly alive when travelling</p>
+    <p>
+      fascinated by the transition from <span class="sunset"
+        >evening to night</span
+      >
+    </p>
+  </section>
 
   <p class="currently">
     currently ux/ui developing at <a href="/"
@@ -24,7 +26,8 @@ import Layout from "../layouts/Layout.astro";
     >
   </p>
 
-  <div class="links">
+  <section class="links">
+    <a href="/resume.pdf">resume <span class="red">✦</span></a>
     <a
       href="mailto:samuelw098@gmail.com"
       target="_blank"
@@ -34,15 +37,13 @@ import Layout from "../layouts/Layout.astro";
     <a href="https://www.linkedin.com/in/shewng"
       >linkedin <span class="red">✦</span></a
     >
-    <a href="/resume.pdf">resume <span class="red">✦</span></a>
-  </div>
+  </section>
 </Layout>
 
 <style>
   p,
   a {
     margin-bottom: var(--space-4);
-    width: fit-content;
   }
 
   p {
@@ -55,12 +56,13 @@ import Layout from "../layouts/Layout.astro";
     display: inline-block;
     position: relative;
     background: none;
+    color: var(--color-gray);
   }
 
   .test::before {
-    animation: 1s linear infinite flicker-before;
+    animation: 1.5s linear infinite flicker-before;
     clip-path: polygon(0px 0px, 100% 0px, 100% 33%, 0px 33%);
-    content: "chronic bodybuilder";
+    content: "chronically lifting weights";
     position: absolute;
     background: none;
     display: inline-block;
@@ -71,9 +73,9 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .test::after {
-    animation: 1s linear infinite flicker-after;
+    animation: 1.25s linear infinite flicker-after;
     clip-path: polygon(0px 67%, 100% 67%, 100% 100%, 0px 100%);
-    content: "chronic bodybuilder";
+    content: "chronically lifting weights";
     position: absolute;
     background: none;
     display: inline-block;
@@ -164,10 +166,10 @@ import Layout from "../layouts/Layout.astro";
   .links {
     display: flex;
     flex-direction: column;
+    font-size: var(--font-size-s);
   }
 
   .sunset {
-    font-weight: 400;
     padding-bottom: 1px;
   }
 

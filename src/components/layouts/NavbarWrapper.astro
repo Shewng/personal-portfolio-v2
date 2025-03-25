@@ -1,0 +1,17 @@
+---
+import Navbar from "./Navbar.jsx";
+
+const currentPath = Astro.url.pathname;
+
+// Navigation items
+const links = [
+  { label: "samuel", href: "/" },
+  { label: "work", href: "/work" },
+  { label: "about", href: "/about" },
+  { label: "now", href: "/now" },
+  { label: "world", href: "/world" },
+  { label: "night", href: "/night" },
+];
+---
+
+<Navbar client:load links={links} path={currentPath} />
