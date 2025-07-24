@@ -1,16 +1,29 @@
 ---
+import { Image } from "astro:assets";
 import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
+import profile from "../assets/profile100.png";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-  <img src="profile100.png" alt="profile picture" />
+  <!-- using Astro's image has really bad decompression - color is way off and more pixelated
+  <Image src={profile} alt="profile picture" />
+  -->
+  <img
+    src={profile.src}
+    width={profile.width}
+    height={profile.height}
+    alt="profile picture"
+  />
   <section>
     <p>front-end enthusiast</p>
-    <p><s>gym rat</s> <span class="test">chronically lifting weights</span></p>
+    <p>
+      <s>gym rat</s>
+      <span class="flicker">chronically lifting weights</span>
+    </p>
     <p>fashion admirer</p>
     <p>truly alive when travelling</p>
     <p>
@@ -50,7 +63,13 @@ import Layout from "../layouts/Layout.astro";
     line-height: 1.5;
   }
 
-  .test {
+  .links {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-size-s);
+  }
+
+  .flicker {
     animation: 1s linear infinite flicker;
     overflow: visible;
     display: inline-block;
@@ -59,7 +78,7 @@ import Layout from "../layouts/Layout.astro";
     color: var(--color-gray);
   }
 
-  .test::before {
+  .flicker::before {
     animation: 1.5s linear infinite flicker-before;
     clip-path: polygon(0px 0px, 100% 0px, 100% 33%, 0px 33%);
     content: "chronically lifting weights";
@@ -72,7 +91,7 @@ import Layout from "../layouts/Layout.astro";
     z-index: 1;
   }
 
-  .test::after {
+  .flicker::after {
     animation: 1.25s linear infinite flicker-after;
     clip-path: polygon(0px 67%, 100% 67%, 100% 100%, 0px 100%);
     content: "chronically lifting weights";
@@ -161,12 +180,6 @@ import Layout from "../layouts/Layout.astro";
 
   .currently {
     margin: var(--space-30) 0px;
-  }
-
-  .links {
-    display: flex;
-    flex-direction: column;
-    font-size: var(--font-size-s);
   }
 
   .sunset {
