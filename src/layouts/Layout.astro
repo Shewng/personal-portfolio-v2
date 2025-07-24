@@ -38,3 +38,22 @@ const { title, description } = Astro.props;
 </html>
 
 <style></style>
+
+<script is:inline>
+  (function () {
+    //const themes = ["sunrise", "day", "sunset", "night"];
+    const themes = ["light", "dark"];
+
+    const getInitialTheme = () => {
+      const savedTheme = localStorage.getItem("theme");
+
+      if (savedTheme && themes.includes(savedTheme)) {
+        return savedTheme;
+      }
+    };
+
+    const theme = getInitialTheme();
+    document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.classList.add(theme);
+  })();
+</script>

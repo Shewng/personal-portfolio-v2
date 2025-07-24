@@ -9,9 +9,11 @@ const links = [
   { label: "work", href: "/work" },
   { label: "about", href: "/about" },
   { label: "now", href: "/now" },
-  { label: "world", href: "/world" },
-  { label: "night", href: "/night" },
+  { label: "world", href: "/world", className: "earth" }, // change this to shwong.world or whatever the new one will become
+  //{ label: "night", href: "/night" }, // probably remove and turn into a button
 ];
 ---
 
-<Navbar client:load links={links} path={currentPath} />
+<header>
+  <Navbar client:load links={links} path={currentPath} />
+</header>

@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import ThemeToggle from "../ThemeToggle";
 import "./Navbar.css";
 
 const Navbar = ({ links, path }) => {
@@ -21,11 +22,9 @@ const Navbar = ({ links, path }) => {
     // Proceed if an item is being hovered, and we have a ref for it
     if (hoveredIndex !== null && hoveredLinkRef.current[hoveredIndex]) {
       const hoveredLink = hoveredLinkRef.current[hoveredIndex];
-
-      // Get the first nav item as a reference point for positioning
-      const containerLeft =
-        hoveredLinkRef.current[0].getBoundingClientRect().left;
       const hoveredLinkRect = hoveredLink.getBoundingClientRect();
+      const containerLeft =
+        hoveredLinkRef.current[0].getBoundingClientRect().left; // Get first link item as a reference point for positioning
 
       // Calculate position and width for selector translate
       const left = hoveredLinkRect.left - containerLeft;
@@ -58,37 +57,39 @@ const Navbar = ({ links, path }) => {
   }, [hoveredIndex]);
 
   // Set link index upon hover
-  const handleMouseEnter = (index) => {
+  const handleMouseEnter = useCallback((index) => {
     setHoveredIndex(index);
-  };
+  }, []);
 
   // Reset link index when hovering off links
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setHoveredIndex(null);
-  };
+  }, []);
 
   return (
-    <header>
-      <nav>
-        {/* Navigation links */}
-        {links.map((link, index) => (
-          <a
-            key={index}
-            href={link.href}
-            ref={(el) => (hoveredLinkRef.current[index] = el)}
-            className={`link${activeLink === link.href ? " active" : ""}`}
-            onClick={() => setActiveLink(link.href)}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={handleMouseLeave}
-          >
-            {link.label}
-          </a>
-        ))}
+    <nav>
+      {/* Navigation links */}
+      {links.map((link, index) => (
+        <a
+          key={index}
+          href={link.href}
+          ref={(el) => (hoveredLinkRef.current[index] = el)}
+          className={`link ${link.className ?? ""} ${
+            activeLink === link.href ? " active" : ""
+          }`}
+          onClick={() => setActiveLink(link.href)}
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={handleMouseLeave}
+        >
+          {link.label}
+        </a>
+      ))}
 
-        {/* Sliding background indicator */}
-        <div className="selector" style={selectorStyle} />
-      </nav>
-    </header>
+      {<ThemeToggle client:load />}
+
+      {/* Sliding background indicator */}
+      <div className="selector" style={selectorStyle} />
+    </nav>
   );
 };
 

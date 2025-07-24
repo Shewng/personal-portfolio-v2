@@ -2,12 +2,13 @@
 
 :root {
     --color-red: rgb(195, 0, 0);
-    --color-black: hsl(222, 11%, 18%);
-    --color-gray: hsl(220, 9%, 46%);
-    --color-lightgray: hsl(222, 16%, 67%);
-    --color-lightestgray: hsl(0, 0%, 90%);
-    --color-white: hsl(0, 0%, 100%);
-    --color-white-2: hsl(0, 0%, 98%);   /*not used*/
+    --color-gray: hsl(220, 9%, 46%);        /*primary text color*/
+    --color-black: hsl(222, 11%, 18%);      /*primary headers and link color*/
+    --color-white: hsl(0, 0%, 100%);        /*page bg color*/
+
+    --color-white-2: hsla(0, 0%, 100%, 0.5);/*navbar bg color*/
+    --color-lightgray: hsl(222, 16%, 67%);  /*navbar links color*/
+    --color-lightestgray: hsl(0, 0%, 90%);  /*border and nav selector bg color*/
 
     --gradient-sunset: #f5633c,
       #d63940,
@@ -34,7 +35,25 @@
     --space-20: 1.25rem;
     --space-30: 1.875rem;
     --space-40: 2.5rem;
+
     
+    --text-primary: #6b7280;    /*primary font color*/ /*color-gray*/
+    --text-secondary: #292c33;  /*headers and links*/ /*color-black*/
+    --bg-primary: #ffffff;      /*background bg*/ /*color-white*/
+    --nav-bg: #ffffff60;        /*navbar bg*/ /*color-white-2*/
+    --nav-links: #9da5b8;       /*navbar links*/ /*color-lightgray*/
+    --nav-border: #e6e6e6;      /*navbar border + nav selector bg color*/ /*color-lightestgray*/
+    --nav-shadow: rgba(0, 0, 0, 0.1);    /*navbar shadow*/
+}
+
+.dark {
+    --text-primary: #a7adb8;
+    --text-secondary: #e4e7eb;
+    --bg-primary: #14171f;
+    --nav-bg: #1f232e60;
+    --nav-links: #7d88a5;
+    --nav-border: #2e3340;
+    --nav-shadow: rgba(96, 165, 250, 0.1);
 }
 
 html,
@@ -47,7 +66,7 @@ a {
     width: 100%;
     font-family: var(--font-family);
     font-weight: 300;
-    color: var(--color-gray);
+    color: var(--text-primary);
 }
 
 body {
@@ -55,6 +74,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--bg-primary);
 }
 
 main {
@@ -65,12 +85,24 @@ a {
     text-decoration: none;
     text-decoration-skip-ink: auto;
     width: fit-content;
+    color: var(--text-secondary);
 }
+
+a > span {
+    font-weight: 400;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+  
 
 h1, h2 {
     font-weight: 400;
     line-height: 1.5;
-    color: var(--color-black);
+    color: var(--text-secondary);
 }
 
 /* heading for work */
@@ -95,4 +127,48 @@ p, ul, ol {
 .red {
     color: var(--color-red);
     font-size: 14px;
+}
+
+a:hover {
+    color: var(--color-red);
+}
+
+
+/* Unused themes, possibly implement in the future */
+.sunrise {
+    --text-secondary: #846253;      /*headers and links*/
+    --bg-primary: #fff5f0;          /*background bg*/
+    --nav-bg: #ffe4d660;            /*navbar bg*/
+    --nav-links: #ff6b35;           /*navbar links*/
+    --nav-border: #ffcab0;          /*navbar border*/
+    --nav-shadow: rgba(255, 107, 53, 0.1);
+}
+
+.day {
+    --text-secondary: #4a5568;
+    --bg-primary: #ffffff;
+    --nav-bg: #f8fafc60;
+    --nav-links: #3182ce;
+    --nav-border: #e2e8f0;
+    --nav-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.sunset {
+    --text-primary: #a7adb8;
+    --text-secondary: #e4e7eb;
+    --bg-primary: #1a1625;
+    --nav-bg: #25162f60;
+    --nav-links: #e57d57;
+    --nav-border: #35294d;
+    --nav-shadow: rgba(51, 48, 61, 0.2);
+}
+
+.night {
+    --text-primary: #a7adb8;
+    --text-secondary: #e4e7eb;
+    --bg-primary: #14171f;
+    --nav-bg: #1f232e60;
+    --nav-links: #7d88a5;
+    --nav-border: #2e3340;
+    --nav-shadow: rgba(96, 165, 250, 0.1);
 }
