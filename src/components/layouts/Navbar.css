@@ -5,6 +5,14 @@ header {
   margin-bottom: var(--space-20);
 }
 
+@media only screen and (max-width: 600px) {
+  header {
+    margin: 0 0 var(--space-30);
+    display: flex;
+    justify-content: center;
+  }
+}
+
 nav {
   display: flex;
   align-items: center;
