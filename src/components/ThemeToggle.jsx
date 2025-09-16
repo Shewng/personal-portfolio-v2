@@ -62,9 +62,8 @@ const ThemeToggle = () => {
       className="link nightlight"
       aria-label={`switch theme`}
       title={`click to transition`}
-      style={{ top: "-1px" }}
     >
-      ☀
+      ✶
     </button>
   );
 };

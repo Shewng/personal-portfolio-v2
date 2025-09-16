@@ -57,6 +57,12 @@ nav {
   color: var(--text-secondary);
 }
 
+.nightlight {
+  font-size: var(--font-size-l);
+  position: relative;
+  top: -1px;
+}
+
 .earth {
   font-weight: 400;
 }
