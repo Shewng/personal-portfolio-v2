@@ -14,7 +14,7 @@ const themes = [{ name: "light" }, { name: "dark" }];
 const ThemeToggle = () => {
   const [currentThemeIndex, setCurrentThemeIndex] = useState(null);
 
-  // Initialize theme on clinet side
+  // Initialize theme on client side
   useEffect(() => {
     const getInitialTheme = () => {
       const savedTheme = localStorage.getItem("theme");
@@ -63,7 +63,7 @@ const ThemeToggle = () => {
       aria-label={`switch theme`}
       title={`click to transition`}
     >
-      ✶
+      🟋
     </button>
   );
 };

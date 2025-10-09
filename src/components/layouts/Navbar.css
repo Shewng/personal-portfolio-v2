@@ -63,10 +63,15 @@ nav {
   top: -1px;
 }
 
+.nightlight:hover {
+  color: var(--nightlight-hover);
+}
+
 .earth {
   font-weight: 400;
 }
 
+.earth.active,
 .earth:hover {
   background-image: linear-gradient(to right, var(--gradient-earth));
   color: transparent;
