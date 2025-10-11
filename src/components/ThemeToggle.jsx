@@ -63,7 +63,7 @@ const ThemeToggle = () => {
       aria-label={`switch theme`}
       title={`click to transition`}
     >
-      🟋
+      ✦
     </button>
   );
 };
