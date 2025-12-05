@@ -1,5 +1,6 @@
 :root {
   --color-red: rgb(195, 0, 0);
+  --color-orennia: rgb(0, 216, 191);
   --color-gray: hsl(220, 9%, 46%); /*primary text color*/
   --color-black: hsl(222, 11%, 18%); /*primary headers and link color*/
   --color-white: hsl(0, 0%, 100%); /*page bg color*/
@@ -131,8 +132,17 @@ ol {
   font-size: var(--font-size-s);
 }
 
+.green {
+  color: var(--color-orennia);
+  font-size: var(--font-size-s);
+}
+
 a:hover {
   color: var(--color-red);
+}
+
+a.orennia:hover {
+  color: var(--color-orennia);
 }
 
 /* Unused themes, possibly implement in the future */
