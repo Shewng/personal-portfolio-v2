@@ -5,15 +5,9 @@ import profile from "../assets/profile.png";
 ---
 
 <Layout>
-  <!-- using Astro's image has really bad decompression - color is way off and more pixelated
-  <Image src={profile} alt="profile picture" />
-  -->
-  <img
-    src={profile.src}
-    width={profile.width}
-    height={profile.height}
-    alt="portait"
-  />
+  <!-- using Astro's image has really bad decompression - color is way off and more pixelated -->
+  <!-- <Image src={profile} alt="profile picture" /> -->
+  <img src={profile.src} width={100} height={100} alt="portait" />
   <section>
     <p>front-end enthusiast</p>
     <p>
